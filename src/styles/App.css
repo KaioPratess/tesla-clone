@@ -1,14 +1,14 @@
 /* General */
 @font-face {
-  font-family: 'Gotham Book';
-  src: url('../assets/font/Gotham\ Book.otf');
+  font-family: 'Gotham Ssm';
+  src: url('../assets/font/GothamSSm-Medium.woff2');
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Gotham Book',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Gotham Ssm',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   list-style: none;
   text-decoration: none;
 }
@@ -70,13 +70,19 @@ img {
   padding: 4px 8px;
   color: #171a20;
   line-height: 20px;
-  font-size: 0.925rem;
+  font-size: 0.875rem;
   display: inline-flex;
   font-weight: 500;
+  border-radius: 4px;
 }
 
 .nav span {
   margin: 0 8px;
+}
+
+.nav ul:nth-child(2) li:last-child a span {
+  margin: 0;
+  margin-left: 5px;
 }
 
 /* Footer */
@@ -94,6 +100,6 @@ img {
 
 .footer ul li a {
   padding: 8px 0;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #5c5e62;
 }
