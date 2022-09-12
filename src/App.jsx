@@ -44,24 +44,24 @@ function App() {
               </a>
             </li>
           </ul>
+          <ul>
+            <li>
+              <a href="#">
+                <span>Shop</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Menu</span>
+              </a>
+            </li>
+          </ul>
         </nav>
-        <ul>
-          <li>
-            <a href="#">
-              <span>Shop</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>Account</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>Menu</span>
-            </a>
-          </li>
-        </ul>
       </header>
 
       <footer className="footer">
