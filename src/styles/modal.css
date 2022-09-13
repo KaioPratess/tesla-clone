@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Gotham Ssm Book';
+  src: url('../assets/font/GothamSSm-Book.woff2');
+}
+
+.home-modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+}
+
+.home-modal div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 322px;
+}
+
+.home-modal div h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #171a20;
+  letter-spacing: -0.6px;
+  line-height: 48px;
+  padding: 0 24px;
+  margin-top: 107px;
+}
+
+.home-modal div p {
+  font-family: 'Gotham Ssm Book';
+  color: #171a20;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 20px;
+  padding: 6px 24px 14px;
+}
+
+.home-modal div:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.home-modal div:last-of-type button {
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 4px 24px;
+  line-height: 16.8px;
+  cursor: pointer;
+  height: 40px;
+  width: 264px;
+}
+
+.home-modal div:last-of-type .home-btn1 {
+  color: white;
+  background-color: #171a20;
+}
+
+.home-modal div:last-of-type .home-btn2 {
+  color: #393c41;
+  background-color: #f4f4f4A6;
+}
+
+.modal-link {
+  color: #171a20;
+  font-family: 'Gotham Ssm Book';
+  box-shadow: 0 1px 0 black;
+  transition: box-shadow .33s cubic-bezier(0.5,0,0,0.75), color .33s ease;
+}
+
+.modal-link:hover {
+  box-shadow: 0 2px 0 black;
+}
+
+/* Arrow Down */
+.arrow-down {
+  cursor: pointer;
+  bottom: 18px;
+  margin-top: 55px;
+}

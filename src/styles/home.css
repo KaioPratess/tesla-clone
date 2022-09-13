@@ -1,0 +1,81 @@
+.main section {
+  height: 100vh;
+}
+
+.model3-sec {
+  background: url('../assets/initial/M3-Homepage-Desktop-LHD.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.modelY-sec {
+  background: url('../assets/initial/Desktop-ModelY.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.modelS-sec {
+  background: url('../assets/initial/Homepage-Model-S-Desktop-LHD.jpg') no-repeat center/
+  cover;
+  display: flex;
+  justify-content: center;
+}
+
+.modelX-sec {
+  background: url('../assets/initial/Homepage-Model-X-Desktop-LHD.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.solarPanels-sec {
+  background: url('../assets/initial/_25-HP-SolarPanels-D.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.solarRoof-sec {
+  background: url('../assets/initial/Homepage-SolarRoof-Desktop-Global.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.accessories-sec {
+  background: url('../assets/initial/accessoriesDesktop.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .model3-sec {
+    background: url('../assets/initial/M3-Homepage-Mobile-LHD.jpg') no-repeat center/cover;
+  }
+  
+  .modelY-sec {
+    background: url('../assets/initial/ModelYMobile.jpg') no-repeat center/cover;
+  }
+  
+  .modelS-sec {
+    background: url('../assets/initial/Homepage-Model-S-Mobile-LHD.jpg') no-repeat center/cover;
+  }
+  
+  .modelX-sec {
+    background: url('../assets/initial/Homepage-Model-X-Mobile-LHD.jpg') no-repeat center/cover;
+  
+  }
+  
+  .solarPanels-sec {
+    background: url('../assets/initial/_25-HP-SolarPanels-D.jpg') no-repeat center/cover;
+  
+  }
+  
+  .solarRoof-sec {
+    background: url('../assets/initial/Homepage-SolarRoof-Mobile-Global.jpg') no-repeat center/cover;
+  
+  }
+  
+  .accessories-sec {
+    background: url('../assets/initial/accessoriesMobile.jpg') no-repeat center/cover;
+  }
+}
+

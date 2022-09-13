@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './styles/App.css';
 import logo from './assets/svg/logo.svg';
+import HomePage from './components/Home';
+import './styles/App.css';
 
 function App() {
   return (
@@ -63,7 +64,7 @@ function App() {
           </ul>
         </nav>
       </header>
-
+      <HomePage />
       <footer className="footer">
         <ul>
           <li>
