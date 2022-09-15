@@ -1,80 +1,111 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 
 function HomePage() {
+  const [currentSec, setCurrentSec] = useState();
+  const [modalInfo, setModalInfo] = useState({
+    product: 'Model 3',
+    cta: [
+      'Order Online for ',
+      <a href="#" className="modal-link" key="model3">
+        Touchless Delivery
+      </a>,
+    ],
+    btn1: 'Custom Order',
+    btn2: 'Existing Inventory',
+  });
+
+  const main = useRef();
+  const sec2 = useRef('');
+
+  const goTo = () => {
+    window.scrollTo({
+      left: 0,
+      top: sec2.current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const product = entry.target.getAttribute('aria-label');
+            setCurrentSec(product);
+            setModalInfo(() => {
+              switch (product) {
+                case 'Solar Panels' || 'Solar Roof':
+                  return {
+                    product,
+                    cta: 'Produce Clean Energy From Your Roof',
+                    btn1: 'Order Now',
+                    btn2: 'Learn More',
+                    fade: true,
+                  };
+                case 'Accessories':
+                  return {
+                    product,
+                    btn1: 'Shop Now',
+                    fade: true,
+                  };
+                default:
+                  return {
+                    product,
+                    cta: [
+                      'Order Online for ',
+                      <a href="#" className="modal-link" key="model3">
+                        Touchless Delivery
+                      </a>,
+                    ],
+                    btn1: 'Custom Order',
+                    btn2: 'Existing Inventory',
+                    fade: true,
+                  };
+              }
+            });
+            setTimeout(() => {
+              setModalInfo((prev) => {
+                return {
+                  ...prev,
+                  fade: false,
+                };
+              });
+            }, 200);
+            window.scrollTo({
+              left: 0,
+              top: entry.target.offsetTop,
+              behavior: 'smooth',
+            });
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    main.current.childNodes.forEach((sec) => {
+      observer.observe(sec);
+    });
+  }, []);
+
   return (
-    <main className="main">
-      <section aria-label="model3" className="model3-sec">
-        <Modal
-          product="Model 3"
-          cta={[
-            'Order Online for ',
-            <a href="#" className="modal-link" key="model3">
-              Touchless Delivery
-            </a>,
-          ]}
-          btn1="Custom Order"
-          btn2="Existing Inventory"
-        />
-      </section>
-      <section aria-label="modelY" className="modelY-sec">
-        <Modal
-          product="Model Y"
-          cta={[
-            'Order Online for ',
-            <a href="#" className="modal-link" key="modelY">
-              Touchless Delivery
-            </a>,
-          ]}
-          btn1="Custom Order"
-          btn2="Existing Inventory"
-        />
-      </section>
-      <section aria-label="modelS" className="modelS-sec">
-        <Modal
-          product="Model S"
-          cta={[
-            'Order Online for ',
-            <a href="#" className="modal-link" key="modelS">
-              Touchless Delivery
-            </a>,
-          ]}
-          btn1="Custom Order"
-          btn2="Existing Inventory"
-        />
-      </section>
-      <section aria-label="modelX" className="modelX-sec">
-        <Modal
-          product="Model X"
-          cta={[
-            'Order Online for ',
-            <a href="#" className="modal-link" key="modelX">
-              Touchless Delivery
-            </a>,
-          ]}
-          btn1="Custom Order"
-          btn2="Existing Inventory"
-        />
-      </section>
-      <section aria-label="solarPanels" className="solarPanels-sec">
-        <Modal
-          product="Solar Panels"
-          cta={`Lowest Cost Solar Panels in America`}
-          btn1="Order Now"
-          btn2="Learn More"
-        />
-      </section>
-      <section aria-label="solarRoof" className="solarRoof-sec">
-        <Modal
-          product="Solar Roof"
-          cta={`Produce Clean Energy From Your Roof`}
-          btn1="Order Now"
-          btn2="Learn More"
-        />
-      </section>
-      <section aria-label="accessories" className="accessories-sec">
-        <Modal product="Accessories" btn1="Shop Now" />
-      </section>
+    <main className="main" ref={main}>
+      <Modal
+        fade={modalInfo.fade}
+        product={modalInfo.product}
+        cta={modalInfo.cta}
+        btn1={modalInfo.btn1}
+        btn2={modalInfo.btn2}
+        currentSec={currentSec}
+        goTo={goTo}
+      />
+      <section aria-label="Model 3" className="model3-sec"></section>
+      <section aria-label="Model Y" className="modelY-sec" ref={sec2}></section>
+      <section aria-label="Model S" className="modelS-sec"></section>
+      <section aria-label="Model X" className="modelX-sec"></section>
+      <section aria-label="Solar Panels" className="solarPanels-sec"></section>
+      <section aria-label="Solar Roof" className="solarRoof-sec"></section>
+      <section aria-label="Accessories" className="accessories-sec"></section>
     </main>
   );
 }

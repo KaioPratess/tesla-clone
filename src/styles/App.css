@@ -74,7 +74,7 @@ img {
 }
 
 .nav ul li a {
-  padding: 4px 8px;
+  padding: 5px 10px;
   color: #171a20;
   line-height: 20px;
   font-size: 0.875rem;
@@ -85,11 +85,6 @@ img {
 
 .nav span {
   margin: 0 8px;
-}
-
-.nav ul:nth-child(2) li:last-child a span {
-  margin: 0;
-  margin-left: 8px;
 }
 
 /* Footer */

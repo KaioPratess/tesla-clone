@@ -8,6 +8,10 @@
   flex-direction: column;
   position: fixed;
   align-items: center;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -51%);
 }
 
 .home-modal div:first-of-type {
@@ -67,12 +71,12 @@
 .modal-link {
   color: #171a20;
   font-family: 'Gotham Ssm Book';
-  box-shadow: 0 1px 0 black;
+  box-shadow: 0 .5px 0 black;
   transition: box-shadow .33s cubic-bezier(0.5,0,0,0.75), color .33s ease;
 }
 
 .modal-link:hover {
-  box-shadow: 0 2px 0 black;
+  box-shadow: 0 1.5px 0 black;
 }
 
 /* Arrow Down */

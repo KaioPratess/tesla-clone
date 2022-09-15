@@ -1,7 +1,27 @@
+import { useEffect, useRef } from 'react';
+
 function ArrowDown(props) {
+  const arrow = useRef();
+
+  useEffect(() => {
+    if (props.currentSec === 'Model 3') {
+      arrow.current.style.visibility = 'visible';
+      setTimeout(() => {
+        arrow.current.classList.add('bounce');
+      }, 2000);
+    } else {
+      arrow.current.style.visibility = 'hidden';
+    }
+  }, [props.currentSec]);
+
   return (
     <>
-      <a href={props.link} className="arrow-down fade-in-top">
+      <a
+        href={props.link}
+        className="arrow-down fade-in-top"
+        ref={arrow}
+        onClick={props.goTo}
+      >
         <svg
           width="38px"
           height="38px"
