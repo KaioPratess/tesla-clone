@@ -71,12 +71,15 @@ function HomePage() {
                   fade: false,
                 };
               });
-            }, 200);
-            window.scrollTo({
-              left: 0,
-              top: entry.target.offsetTop,
-              behavior: 'smooth',
-            });
+            }, 700);
+
+            setTimeout(() => {
+              window.scroll({
+                left: 0,
+                top: entry.target.offsetTop,
+                behavior: 'smooth',
+              });
+            }, 500);
           }
         });
       },

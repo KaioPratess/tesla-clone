@@ -11,15 +11,21 @@ function Modal(props) {
       p.current.classList.remove('fade-in-bottom2');
       btn.current.classList.remove('fade-in-right');
     }
+
+    if (props.currentSec === 'Accessories' && window.innerWidth < '600') {
+      modal.current.style.paddingBottom = '200px';
+    } else {
+      modal.current.style.paddingBottom = '0';
+    }
   }, [props.currentSec]);
 
   useEffect(() => {
+    modal.current.style.transition = 'opacity 200ms ease';
     if (props.fade) {
-      modal.current.style.opacity = '0';
+      modal.current.style.opacity = '.05';
     } else {
       modal.current.style.opacity = '1';
     }
-    console.log(props.fade);
   }, [props.fade]);
 
   return (

@@ -85,3 +85,40 @@
   bottom: 18px;
   margin-top: 55px;
 }
+
+@media(max-width: 600px) {
+  .home-modal {
+    width: 100%;
+  }
+
+  .home-modal div:first-of-type {
+    margin-bottom: 276px;
+  }
+
+  .home-modal div h1 {
+    font-size: 2.25rem;
+  }
+
+  .home-modal div:last-of-type {
+    display: grid;
+    grid-template-columns: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+
+  .home-modal div:last-of-type button {
+    height: 40px;
+    width: 100%;
+  }
+
+  .home-modal div p {
+    padding-top: 0px;
+  }
+
+  .arrow-down {
+    margin-top: 25px;
+  }
+}
