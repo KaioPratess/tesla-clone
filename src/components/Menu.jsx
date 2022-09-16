@@ -4,7 +4,15 @@ function Menu(props) {
   const menu = useRef();
 
   return (
-    <div className="menu-bg">
+    <div
+      className="menu-bg"
+      onClick={() => {
+        menu.current.classList.add('fade-out-right');
+        setTimeout(() => {
+          props.deactivateMenu();
+        }, 250);
+      }}
+    >
       <section className="menu fade-in-right2" ref={menu}>
         <div
           className="close-menu"
@@ -12,8 +20,7 @@ function Menu(props) {
             menu.current.classList.add('fade-out-right');
             setTimeout(() => {
               props.deactivateMenu();
-            }, 300);
-            console.log(menu);
+            }, 250);
           }}
         >
           <div>

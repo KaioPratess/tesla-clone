@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import logo from './assets/svg/logo.svg';
 import HomePage from './components/Home';
 import Menu from './components/Menu';
@@ -6,19 +6,28 @@ import './styles/App.css';
 
 function App() {
   const [activateMenu, setActivateMenu] = useState(false);
+  const header = useRef();
+  const footer = useRef();
+  const app = useRef();
 
   useEffect(() => {
     const body = document.querySelector('body');
     if (activateMenu) {
       body.style.overflow = 'hidden';
+      header.current.style.paddingRight = '30px';
+      footer.current.style.paddingRight = '15px';
+      app.current.style.paddingRight = '16px';
     } else {
-      body.style.overflow = 'scroll';
+      header.current.style.paddingRight = '12px';
+      footer.current.style.paddingRight = '0px';
+      app.current.style.paddingRight = '0';
+      body.style.overflow = 'visible';
     }
   }, [activateMenu]);
 
   return (
-    <div className="App">
-      <header className="header">
+    <div className="App" ref={app}>
+      <header className="header" ref={header}>
         <div className="logo-div">
           <a href="/">
             <img src={logo} alt="Tesla Logo" />
@@ -80,8 +89,8 @@ function App() {
           isActive={activateMenu}
         />
       )}
-      <HomePage />
-      <footer className="footer">
+      <HomePage activateMenu={activateMenu} />
+      <footer className="footer" ref={footer}>
         <ul>
           <li>
             <a href="#">Tesla © 2022</a>

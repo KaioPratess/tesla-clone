@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 
-function HomePage() {
+function HomePage(props) {
   const [currentSec, setCurrentSec] = useState();
   const [modalInfo, setModalInfo] = useState({
     product: 'Model 3',
@@ -25,6 +25,18 @@ function HomePage() {
       behavior: 'smooth',
     });
   };
+
+  useEffect(() => {
+    if (props.activateMenu) {
+      main.current.childNodes.forEach((sec) => {
+        sec.style.paddingRight = '16px';
+      });
+    } else {
+      main.current.childNodes.forEach((sec) => {
+        sec.style.paddingRight = '0';
+      });
+    }
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
