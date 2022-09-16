@@ -1,14 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from './assets/svg/logo.svg';
 import HomePage from './components/Home';
+import Menu from './components/Menu';
 import './styles/App.css';
 
 function App() {
+  const [activateMenu, setActivateMenu] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (activateMenu) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'scroll';
+    }
+  }, [activateMenu]);
+
   return (
     <div className="App">
       <header className="header">
         <div className="logo-div">
-          <a href="#">
+          <a href="/">
             <img src={logo} alt="Tesla Logo" />
           </a>
         </div>
@@ -44,8 +56,6 @@ function App() {
                 <span>Solar Panels</span>
               </a>
             </li>
-          </ul>
-          <ul>
             <li>
               <a href="#">
                 <span>Shop</span>
@@ -56,14 +66,20 @@ function App() {
                 <span>Account</span>
               </a>
             </li>
-            <li>
-              <a href="#">
+            <li onClick={() => setActivateMenu(true)}>
+              <a>
                 <span>Menu</span>
               </a>
             </li>
           </ul>
         </nav>
       </header>
+      {activateMenu && (
+        <Menu
+          deactivateMenu={() => setActivateMenu(false)}
+          isActive={activateMenu}
+        />
+      )}
       <HomePage />
       <footer className="footer">
         <ul>
