@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import logo from './assets/svg/logo.svg';
 import HomePage from './components/Home';
+import Models from './components/productsPage/Models';
 import Menu from './components/Menu';
 import './styles/App.css';
 
@@ -89,7 +90,8 @@ function App() {
           isActive={activateMenu}
         />
       )}
-      <HomePage activateMenu={activateMenu} />
+      <Models />
+      {/* <HomePage activateMenu={activateMenu} /> */}
       <footer className="footer" ref={footer}>
         <ul>
           <li>

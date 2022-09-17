@@ -8,7 +8,7 @@ function Modal(props) {
 
   useEffect(() => {
     if (props.currentSec === 'Solar Roof') {
-      p.current.classList.remove('fade-in-bottom2');
+      p.current.classList.remove('fade-in-bottom8');
       btn.current.classList.remove('fade-in-right');
     }
 
@@ -33,7 +33,7 @@ function Modal(props) {
       <div>
         <h1 className="fade-in-bottom">{props.product}</h1>
         {props.cta && (
-          <p className="fade-in-bottom2" ref={p}>
+          <p className="fade-in-bottom8" ref={p}>
             {props.cta}
           </p>
         )}

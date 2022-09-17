@@ -2,6 +2,7 @@
 @import './modal.css';
 @import './animations.css';
 @import './menu.css';
+@import './productsPage.css';
 
 /* General */
 @font-face {
@@ -37,9 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-/* body::-webkit-scrollbar { 
-  display: none; 
-} */
 /* Header */
 .header {
   padding: 12px 15px 12px 32px;
@@ -126,7 +124,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   bottom: 7px;
   z-index: 7;
 }
