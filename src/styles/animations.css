@@ -54,19 +54,12 @@
 	animation: fade-in-bottom 0.6s ease-in-out 1.2s both;
 }
 
- @keyframes fade-in-bottom {
-  0% {
-    transform: translateY(25px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .fade-in-bottom8 {
 	animation: fade-in-bottom8 1.2s ease-in-out 1.2s both;
+}
+
+.fade-in-bottom9 {
+	animation: fade-in-bottom9 .8s ease-out .2s both;
 }
 
  @keyframes fade-in-bottom8 {
@@ -80,7 +73,16 @@
   }
 }
 
-
+@keyframes fade-in-bottom9 {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .fade-in-right {
 	animation: fade-in-right 0.6s ease-in-out 1.2s both;

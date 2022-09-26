@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Gotham Ssm Book';
+  src: url('../assets/font/GothamSSm-Book.woff2');
+}
+
+.model {
+  overflow-x: hidden;
+}
+
 /* Initial Sec */
 .initial-sec {
   background: url('../assets/modelS/modelS-img/Model-S-Main-Hero-Desktop-LHD.jpg') no-repeat center/cover;
@@ -72,18 +81,8 @@
 }
 
 .initial-sec .btn {
-  border-radius: 4px;
-  font-size: 0.875rem;
-  padding: 4px 24px;
-  line-height: 16.8px;
-  cursor: pointer;
-  height: 40px;
-  width: 204px;
   border: 4px solid white;
-  background-color: transparent;
   color: white;
-  transition: .3s ease;
-  margin-top: 3px;
 }
 
 .initial-sec .btn:hover {
@@ -95,6 +94,15 @@
 .interior-sec {
   background-color: black;
   color: white;
+  box-shadow:
+  0px -23.3px 8.2px rgba(0, 0, 0, 0.323),
+  0px -34.5px 12.2px rgba(0, 0, 0, 0.336),
+  0px -50.7px 17.9px rgba(0, 0, 0, 0.339),
+  0px -76px 26.8px rgba(0, 0, 0, 0.331),
+  0px -121.1px 42.7px rgba(0, 0, 0, 0.309),
+  0px -227px 80px rgba(0, 0, 0, 0.22)
+;
+padding-bottom: 84px;
 }
 
 .interior-sec-title {
@@ -112,11 +120,18 @@
   letter-spacing: -0.5px;
   padding: 32px 0 8px;
   margin-bottom: 48px;
+  display: none;
 }
 
-.interior-sec div:nth-child(2) {
+.interior-sec-title h2.show {
+  display: block;
+}
+
+.interior-hero {
   margin-bottom: 140px;
 }
+
+/* Slide */
 
 .slide {
   display: flex;
@@ -181,3 +196,829 @@
   display: block;
 }
 
+/* Perks */
+.interior-perks {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  margin-top: 192px;
+}
+
+.perk-1-bg,
+.perk-2-bg,
+.perk-3-bg {
+  width: 100%;
+  height: 296px;
+}
+
+.perk-1,
+.perk-2,
+.perk-3 {
+  display: grid;
+  grid-template-columns: 527px 527px;
+  padding: 0 156px;
+  place-items: center;
+  display: none;
+}
+
+.interior-perks video {
+  object-fit: cover;
+  width: 515px;
+}
+
+.interior-perks > div div:first-child strong {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.perk-1 div:last-child {
+  margin-left: 120px;
+}
+
+.perk-2 div:first-child {
+  margin-right: 120px;
+}
+
+.perk-3 div:last-child {
+  margin-left: 120px;
+}
+
+.interior-perks > div div:first-child p {
+  font-size: 0.875rem;
+  color: #eee;
+  line-height: 20px;
+  padding: 0 0 14px;
+  margin-top: 16px;
+}
+
+/* Button */
+
+.btn {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 4px 24px;
+  line-height: 16.8px;
+  cursor: pointer;
+  height: 40px;
+  width: 204px;
+  border: 3px solid #171a20;
+  background-color: transparent;
+  color: black;
+  transition: .3s ease;
+  margin-top: 3px;
+}
+
+.btn:hover {
+  background-color: #171a20;
+  color: white;
+}
+
+/* Model */
+.divisor > div:first-of-type {
+  display: grid;
+}
+
+.divisor > div:first-of-type div:last-child {
+  justify-self: center;
+  margin-top: -121px;
+}
+
+.divisor-img img {
+  height: 447px;
+}
+
+.divisor > div:first-of-type div:last-child ul {
+  display: flex;
+  gap: 200px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.divisor > div:first-of-type div:last-child ul li {
+  font-size: 1.75rem;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.divisor > div:first-of-type div:last-child ul li span {
+  font-size: 1.5rem;
+  padding-left: 4px;
+}
+
+.divisor > div:first-of-type div:last-child ul li p {
+  font-size: 0.80rem;
+    padding: 8px 0 0;
+    color: white;
+}
+
+.divisor > div:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 156px;
+  margin-top: 40px;
+  align-items: start;
+  gap: 0 130px;
+  display: none;
+}
+
+.divisor > div:last-of-type span {
+  font-family: 'Gotham Ssm Book';
+  font-size: 1rem;
+  font-weight: 300;
+  color: #171a20;
+  letter-spacing: -0.4px;
+  line-height: 24px;
+}
+
+.divisor > div:last-of-type h2 {
+  color: #171a20;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  margin-bottom: 24px;
+}
+
+.divisor > div:last-of-type p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.875rem;
+  color: #393c41;
+  line-height: 20px;
+  justify-self: end;
+}
+
+/* Electric Powertrain */
+.electric-powertrain {
+  margin-top: 212px;
+  padding: 0 156px;
+  display: flex;
+  flex-direction: column;
+}
+
+.electric-powertrain h2 {
+  font-size: 1.75rem;
+  color: #171a20;
+  font-weight: 500;
+  letter-spacing: -0.5;
+  line-height: 36px;
+  display: none;
+}
+
+.electric-powertrain p:first-child {
+  display: none;
+}
+
+.electric-powertrain p {
+  font-family: 'Gotham Ssm Book';
+  color:#393c41;
+  font-size: 0.875rem;
+  line-height: 20px;
+  margin-top: 24px;
+}
+
+.electric-powertrain > p:last-child {
+  text-align: center;
+  margin-top: 72px;
+  color: #5c5e62;
+  font-size: 0.75rem;
+  line-height: 18px;
+}
+
+/* Slide2 */
+.slide2 {
+  align-self: center;
+}
+.slide2-img {
+  width: 1270px;
+}
+
+.slide2-img img {
+  display: none;
+}
+
+.slide2-img img.show {
+  display: block;
+}
+
+.slide2-models {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide2-models div {
+  border-top: 3px solid #9B9D9F;
+  width: 515px;
+  color: #9B9D9F;
+  cursor: pointer;
+}
+
+.slide2-models div.show {
+  border-top: 3px solid black;
+  color: #171a20;
+}
+
+.slide2-models div h4 {
+  font-size: 1rem;
+  padding: 16px 0 0;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.slide2-models div p {
+  font-size: 0.875rem;
+  color: #9B9D9F;
+  line-height: 20px;
+  margin: 15px 0;
+}
+
+.slide2-models div p.show {
+  color: #171a20;
+}
+
+.slide2-models div ul {
+  display: flex;
+  gap: 48px;
+}
+
+.slide2-models div ul li {
+  color: #9B9D9F;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.6;
+  line-height: 28px;
+}
+
+.slide2-models div ul li.show {
+  color: #171a20;
+}
+
+.slide2-models div ul li p {
+  font-size: 0.75rem;
+  color: #9B9D9F;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 18px;
+  margin-top: 1px;
+}
+
+.slide2-models div ul li p.show {
+  color: #5c5e62;
+}
+
+/* Exterior Sec */
+.exterior-sec {
+  margin-top: 64px;
+  background-color: black;
+  color: white;
+}
+
+.exterior-sec img {
+  height: 447px;
+}
+
+.exterior-sec .desc {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 156px;
+  margin-top: 40px;
+  align-items: start;
+  gap: 0 130px;
+  display: none;
+}
+
+.exterior-sec .desc span {
+  font-family: 'Gotham Ssm Book';
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  line-height: 24px;
+}
+
+.exterior-sec .desc h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  margin-bottom: 24px;
+  width: 340px;
+}
+
+.exterior-sec .desc p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.875rem;
+  line-height: 20px;
+  justify-self: end;
+}
+
+.exterior-sec .btn {
+  border: 3px solid white;
+  color: white;
+}
+
+.exterior-sec .btn:hover {
+  background-color: white;
+  color: #171a20;
+}
+
+.exterior-perks {
+  margin-top: 124px;
+  padding-bottom: 68px;
+}
+
+.exterior-perks img {
+  width: 527px;
+  height: 294px;
+}
+
+.exterior-perks > div div:first-child strong {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.exterior-perks > div div:first-child p {
+  font-size: 0.875rem;
+  color: #eee;
+  line-height: 20px;
+  padding: 0 0 14px;
+  margin-top: 16px;
+}
+
+/* Range Sec */
+.range {
+  display: grid;
+  grid-template-columns: 950px 1fr;
+}
+
+.range video {
+  width: 950px;
+  height: 667px;
+  object-fit: cover;
+}
+
+.range-div-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 327px;
+  padding: 48px 40px;
+  display: none;
+}
+
+.range-div-2 span {
+  font-size: 1rem;
+  font-family: 'Gotham Ssm Book';
+  color: #171a20;
+  font-weight: 300;
+  letter-spacing: -0.4;
+  line-height: 24px;
+}
+
+.range-div-2 h4 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #171a20;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+}
+
+.range-div-2 p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.875rem;
+  color: #393c41;
+  line-height: 20px;
+  margin-top: 24px;
+}
+
+.range-div-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.range-div-1 ul {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 10px;
+  margin-top: -144px;
+  display: none;
+}
+
+.range-div-1 ul li {
+  font-size: 1.75rem;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.range-div-1 ul li span {
+  font-size: 1.5rem;
+  padding-left: 4px;
+}
+
+.range-div-1 ul li p {
+  font-size: 0.80rem;
+  padding: 8px 0 0;
+  color: white;
+  max-width: 27ch;
+}
+
+/* Slide 3 */
+.slide3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.slide3-img img {
+  width: 1318px;
+  height: 714px;
+  display: none;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.slide3-img img.active {
+  display: block;
+}
+
+.slide3-nav {
+  display: flex;
+  gap: 24px;
+  margin-top: 72px;
+}
+
+.slide3-nav div {
+  border-top: 2px solid #9B9D9F;
+  color: #9B9D9F;
+  display: grid;
+  cursor: pointer;
+}
+
+.slide3-nav div.active {
+  border-top: 3px solid #171a20;
+  color: #171a20;
+}
+
+.slide3-nav div p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 16px 0 0 ;
+  max-width: 15ch;
+}
+
+.slide3-nav div span {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  padding: 16px 0px 8px;
+  align-self: end;
+}
+
+/* Travel Sec */
+.travel-sec {
+  display: flex;
+  flex-direction: column;
+  margin-top: 156px;
+}
+
+.travel-sec h3 {
+  color: #171a20;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  align-self: start;
+  margin: 0 156px;
+}
+
+.travel-sec > p {
+  color: #393c41;
+  font-size: 0.875rem;
+  line-height: 20px;
+  padding: 16px 0;
+  margin: 0 156px;
+}
+
+.travel-sec .btn {
+  align-self: center;
+  margin-top: 80px;
+}
+
+/* Safety Sec */
+.safety {
+  display: grid;
+  grid-template-columns:  1fr 950px;
+  margin-top: 64px;
+}
+
+.safety-div-1 {
+  grid-column: 2;
+}
+
+.safety-div-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 327px;
+  padding: 48px 40px;
+  display: none;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.safety-div-2 span {
+  font-size: 1rem;
+  font-family: 'Gotham Ssm Book';
+  color: #171a20;
+  font-weight: 300;
+  letter-spacing: -0.4;
+  line-height: 24px;
+}
+
+.safety-div-2 h4 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #171a20;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+}
+
+.safety-div-2 p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.875rem;
+  color: #393c41;
+  line-height: 20px;
+  margin-top: 24px;
+}
+
+/* AutoPilot Sec */
+.autopilot-sec > div:first-of-type {
+  display: grid;
+}
+
+.autopilot-sec > div:first-of-type div:last-child {
+  justify-self: center;
+  margin-top: -121px;
+}
+
+.autopilot-div-1 {
+  position: relative;
+}
+
+.autopilot-div-1 img {
+  height: 447px;
+}
+
+.autopilot-div-1  div:last-child ul {
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 41px;
+  left: 80px;
+  display: none;
+}
+
+.autopilot-div-1  div:last-child ul li {
+  font-size: 1.75rem;
+  letter-spacing: -0.6px;
+  text-align: left;
+  font-weight: 500;
+  align-self: start;
+}
+.autopilot-div-1  div:last-child ul li span {
+  font-size: 1.5rem;
+  padding-left: 4px;
+}
+
+.autopilot-div-1  div:last-child ul li p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.80rem;
+  padding: 8px 0 0;
+  max-width: 28ch;
+}
+
+.autopilot-sec > div:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 156px;
+  margin-top: 40px;
+  align-items: start;
+  gap: 0 130px;
+}
+
+.autopilot-sec > div:last-of-type span {
+  font-family: 'Gotham Ssm Book';
+  font-size: 1rem;
+  font-weight: 300;
+  color: #171a20;
+  letter-spacing: -0.4px;
+  line-height: 24px;
+}
+
+.autopilot-sec > div:last-of-type h2 {
+  color: #171a20;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  margin-bottom: 24px;
+}
+
+.autopilot-sec > div:last-of-type p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.875rem;
+  color: #393c41;
+  line-height: 20px;
+  justify-self: end;
+}
+
+.tesla-vision img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.autopilot-div-2 {
+  display: none;
+}
+
+/* Features */
+.features-sec {
+  display: flex;
+  flex-direction: column;
+  margin-top: 156px;
+}
+
+.features-sec h3 {
+  color: #171a20;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  align-self: start;
+  margin: 0 156px;
+}
+
+.features-sec > p {
+  color: #393c41;
+  font-size: 0.875rem;
+  line-height: 20px;
+  padding: 16px 0;
+  margin: 0 156px;
+}
+
+/* Specs */
+.specs-sec {
+  display: flex;
+  gap: 110px;
+  background-color: black;
+  color: #eee;
+  padding: 48px 0 0;
+  height: 100vh;
+}
+
+.specs-img img {
+  width: 659px;
+  height: 494px;
+}
+
+.specs-desc h3 {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 0px 0px 24px;
+  letter-spacing: -0.5px;
+}
+
+.specs-span {
+  font-family: 'Gotham Ssm Book';
+  font-weight: 300;
+}
+
+.specs-desc button {
+  border: 3px solid #222;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 14.5px;
+  width: 229px;
+  height: 32px;
+  color: #d0d1d2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.specs-desc button.active {
+  border: 3px solid #d0d1d2;
+}
+
+.specs-desc button:nth-of-type(2) {
+  margin-left: 4px;
+}
+
+.list-1,
+.list-2 {
+  display: flex;
+  gap:  40px;
+  margin-top: 24px;
+}
+
+.list-2 {
+  gap: 104px;
+}
+
+.list-1 li, 
+.list-2 li {
+  display: list-item;
+  color: #eee;
+  font-size: 0.875rem;
+  line-height: 20px;
+  margin: 0 0 24px;
+}
+
+.list-1 li::before,
+.list-2 li::before {
+  content: '';
+  width: 20px;
+  height: .5px;
+  display: block;
+  background-color: #8E8E8E;
+  margin-bottom: 15px;
+}
+
+.list-1 li strong,
+.list-2 li strong {
+  color: white;
+  font-weight: 500;
+}
+
+.list-1 li span,
+.list-2 li span {
+  display: block;
+}
+
+.list-1 li i,
+.list-2 li i {
+  display: block;
+  max-width: 20ch;
+}
+
+/* Final Sec */
+.final-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 132px;
+  padding: 164px 0;
+}
+
+.final-sec-img img {
+  width: 611px;
+  height: 339px;
+}
+
+.final-sec div:first-child h2 {
+  color: #171a20;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 36px;
+  padding: 0 0 16px;
+  margin-bottom: 10px;
+}
+
+.final-sec div:first-child button:last-of-type {
+  margin-left: 24px
+}
+
+/* Disclaimer */
+.disclaimer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer p {
+  font-family: 'Gotham Ssm Book';
+  font-size: 0.75rem;
+  line-height: 18px;
+  margin: 0 80px;
+  padding: 12px 0 14px;
+  color: #5c5e62;
+  max-width: 75ch;
+  text-align: center;
+}

@@ -12,6 +12,23 @@ function Slide1() {
   const list = useRef();
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          const video = carousel.current.childNodes[0];
+          video.autoplay = true;
+          video.load();
+        }
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+
+    observer.observe(carousel.current);
+  }, []);
+
+  useEffect(() => {
     circles.current.childNodes.forEach((circle, index) => {
       if (index === currentVideo) circle.style.background = 'white';
       else circle.style.background = '#5c5e62';
@@ -23,8 +40,8 @@ function Slide1() {
     carousel.current.childNodes.forEach((video, index) => {
       if (index === currentVideo) {
         video.classList.add('active');
+        video.autoplay = true;
         video.load();
-        video.play();
       } else video.classList.remove('active');
 
       video.addEventListener('ended', () => {
@@ -45,11 +62,11 @@ function Slide1() {
   return (
     <div className="slide">
       <div className="slide-carousel" ref={carousel}>
-        <video src={interiorVid8} className="active  fade-in" />
-        <video src={interiorVid1} className="fade-in" />
-        <video src={interiorVid2} className="fade-in" />
-        <video src={interiorVid3} className="fade-in" />
-        <video src={interiorVid4} className="fade-in" />
+        <video src={interiorVid8} className="active  fade-in" muted={true} />
+        <video src={interiorVid1} className="fade-in" muted={true} />
+        <video src={interiorVid2} className="fade-in" muted={true} />
+        <video src={interiorVid3} className="fade-in" muted={true} />
+        <video src={interiorVid4} className="fade-in" muted={true} />
       </div>
       <div className="slide-nav">
         <div className="circles" ref={circles}>

@@ -1,3 +1,5 @@
+import Button from './otherComponents/Button';
+
 function InitialSec() {
   return (
     <section className="initial-sec">
@@ -24,7 +26,7 @@ function InitialSec() {
             <p>Peak Power</p>
           </li>
         </ul>
-        <button className="btn fade-in-bottom6">Order Now</button>
+        <Button />
       </div>
     </section>
   );
