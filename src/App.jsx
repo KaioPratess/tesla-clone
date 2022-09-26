@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import logo from './assets/svg/logo.svg';
 import HomePage from './components/Home';
 import Models from './components/productsPage/Models';
@@ -27,100 +28,107 @@ function App() {
   }, [activateMenu]);
 
   return (
-    <div className="App" ref={app}>
-      <header className="header" ref={header}>
-        <div className="logo-div">
-          <a href="/">
-            <img src={logo} alt="Tesla Logo" />
-          </a>
-        </div>
-        <nav className="nav">
-          <ul className="nav-products">
+    <BrowserRouter>
+      <div className="App" ref={app}>
+        <header className="header" ref={header}>
+          <div className="logo-div">
+            <a href="/">
+              <img src={logo} alt="Tesla Logo" />
+            </a>
+          </div>
+          <nav className="nav">
+            <ul className="nav-products">
+              <li>
+                <Link to="/tesla-clone/modelS">
+                  <span>Model S</span>
+                </Link>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Model 3</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Model X</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Model Y</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Solar Roof</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Solar Panels</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Shop</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Account</span>
+                </a>
+              </li>
+              <li onClick={() => setActivateMenu(true)}>
+                <a>
+                  <span>Menu</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        {activateMenu && (
+          <Menu
+            deactivateMenu={() => setActivateMenu(false)}
+            isActive={activateMenu}
+          />
+        )}
+        <Routes>
+          <Route
+            path="/tesla-clone/"
+            element={<HomePage activateMenu={activateMenu} />}
+          />
+          <Route path="/tesla-clone/modelS" element={<Models />} />
+        </Routes>
+        <footer className="footer" ref={footer}>
+          <ul>
             <li>
-              <a href="#">
-                <span>Model S</span>
-              </a>
+              <a href="#">Tesla © 2022</a>
             </li>
             <li>
-              <a href="#">
-                <span>Model 3</span>
-              </a>
+              <a href="#">Privacy & Legal</a>
             </li>
             <li>
-              <a href="#">
-                <span>Model X</span>
-              </a>
+              <a href="#">Vehicle Recalls</a>
             </li>
             <li>
-              <a href="#">
-                <span>Model Y</span>
-              </a>
+              <a href="#">Contact</a>
             </li>
             <li>
-              <a href="#">
-                <span>Solar Roof</span>
-              </a>
+              <a href="#">Careers</a>
             </li>
             <li>
-              <a href="#">
-                <span>Solar Panels</span>
-              </a>
+              <a href="#">News</a>
             </li>
             <li>
-              <a href="#">
-                <span>Shop</span>
-              </a>
+              <a href="#">Engage</a>
             </li>
             <li>
-              <a href="#">
-                <span>Account</span>
-              </a>
-            </li>
-            <li onClick={() => setActivateMenu(true)}>
-              <a>
-                <span>Menu</span>
-              </a>
+              <a href="#">Locations</a>
             </li>
           </ul>
-        </nav>
-      </header>
-      {activateMenu && (
-        <Menu
-          deactivateMenu={() => setActivateMenu(false)}
-          isActive={activateMenu}
-        />
-      )}
-      <Models />
-      {/* <HomePage activateMenu={activateMenu} /> */}
-      <footer className="footer" ref={footer}>
-        <ul>
-          <li>
-            <a href="#">Tesla © 2022</a>
-          </li>
-          <li>
-            <a href="#">Privacy & Legal</a>
-          </li>
-          <li>
-            <a href="#">Vehicle Recalls</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Careers</a>
-          </li>
-          <li>
-            <a href="#">News</a>
-          </li>
-          <li>
-            <a href="#">Engage</a>
-          </li>
-          <li>
-            <a href="#">Locations</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
