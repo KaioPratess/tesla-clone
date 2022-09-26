@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://kaiopratess.github.io/tesla-clone/">
+    <a href="https://kaiopratess.github.io/tesla-clone/" target='_blank'>
       Demo
     </a>
     <span> | </span>
