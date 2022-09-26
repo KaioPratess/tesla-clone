@@ -1,5 +1,3 @@
-<!-- Please update value in the {}  -->
-
 <h1 align="center">Tesla Clone</h1>
 
 <div align="center">
@@ -27,7 +25,6 @@
 - [Features](#features)
 - [How to use](#how-to-use)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
@@ -48,7 +45,7 @@ This project is a clone of the main Tesla website. The goal is to clone all page
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [Vite](https://vitejs.dev/)
 
-## Features (Ideas)
+## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
