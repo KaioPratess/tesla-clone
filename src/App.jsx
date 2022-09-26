@@ -32,9 +32,9 @@ function App() {
       <div className="App" ref={app}>
         <header className="header" ref={header}>
           <div className="logo-div">
-            <a href="/">
+            <Link to="/tesla-clone/">
               <img src={logo} alt="Tesla Logo" />
-            </a>
+            </Link>
           </div>
           <nav className="nav">
             <ul className="nav-products">
